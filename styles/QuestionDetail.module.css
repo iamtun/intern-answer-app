@@ -1,0 +1,14 @@
+.container {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left_side {
+  width: 700px;
+  height: 90vh;
+}
+
+.right_side {
+  width: 300px;
+}

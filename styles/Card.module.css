@@ -1,0 +1,25 @@
+.card_question {
+    width: '100%';
+    background-color: #EFF5F5 ;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+.card_question:hover {
+    cursor: pointer;
+}
+
+.card_question_title {
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid gray;
+    
+}
+
+.icons {
+    border-top: 1px solid gray;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+}
