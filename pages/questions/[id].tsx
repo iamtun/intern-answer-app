@@ -12,7 +12,16 @@ import styles from '../../styles/QuestionDetail.module.css';
 export interface QuestionDetailProps {
 }
 
+function delay(time: number) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  // request -> run SSR -> render -> change url + show page
+  // await delay(5000);
+  // console.log('delay 5s');
+  
   const id = params?.id;
 
   const _question = fetch(`${process.env.API_URI_PROXY}/question/info?id=${id}`).then(resp => resp).then(question => question.json());
@@ -29,6 +38,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 }
 
 
+
 export default function QuestionDetail({ question, answers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
@@ -41,13 +51,13 @@ export default function QuestionDetail({ question, answers }: InferGetServerSide
         </nav>
         <div className={styles.container}>
           <div className={styles.left_side}>
-            <QuestionItem question={question} isDetail={true}/>
+            <QuestionItem question={question} isDetail={true} />
             <br />
             <h3>{answers.length} Answers</h3>
             {answers.map((answer: Answer) => <AnswerItem answer={answer} key={answer.id} />)}
           </div>
           <div className={styles.right_side}>
-            <RelatedQuestion question={question}/>
+            <RelatedQuestion question={question} />
           </div>
         </div>
       </div>
