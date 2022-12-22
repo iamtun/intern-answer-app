@@ -1,0 +1,13 @@
+.nav {
+    height: 80px;
+    background-color: beige;
+    padding: 2rem;
+}
+
+.nav_item {
+    padding: 0 8px;
+}
+
+.nav_item:hover {
+    text-decoration: underline;
+}

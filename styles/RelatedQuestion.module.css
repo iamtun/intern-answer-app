@@ -4,6 +4,7 @@
   max-height: fit-content;
   border: 1px solid gray;
   border-radius: 8px;
+  margin: 8px;
 }
 
 .container {

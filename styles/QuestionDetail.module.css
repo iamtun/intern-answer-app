@@ -9,6 +9,10 @@
   height: 90vh;
 }
 
+.title_answers {
+  padding: 8px 0;
+  border-bottom: 1px solid gray;
+}
 .right_side {
   width: 300px;
 }

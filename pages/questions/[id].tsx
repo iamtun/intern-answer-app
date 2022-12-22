@@ -46,14 +46,11 @@ export default function QuestionDetail({ question, answers }: InferGetServerSide
         <title>{question.title}</title>
       </Head>
       <div>
-        <nav>
-          <Link href='/'>Home</Link>
-        </nav>
         <div className={styles.container}>
           <div className={styles.left_side}>
             <QuestionItem question={question} isDetail={true} />
             <br />
-            <h3>{answers.length} Answers</h3>
+            <h3 className={styles.title_answers}>{answers.length} Answers</h3>
             {answers.map((answer: Answer) => <AnswerItem answer={answer} key={answer.id} />)}
           </div>
           <div className={styles.right_side}>
