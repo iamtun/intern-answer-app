@@ -9,7 +9,7 @@ export default function Header (props: IHeaderProps) {
     <nav className={styles.nav}>
       <Link href="/" className={styles.nav_item}>Home</Link>
       <Link href="/" className={styles.nav_item}>Questions</Link>
-      <Link href="/about" className={styles.nav_item}>About</Link>
+      <Link href="/pets" className={styles.nav_item}>Pets</Link>
     </nav>
   );
 }

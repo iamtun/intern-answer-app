@@ -5,6 +5,15 @@ const nextConfig = {
   env: {
     API_URI_PROXY: process.env.API_URI_PROXY,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+        port: '',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

@@ -37,9 +37,14 @@ export const getStaticProps: GetStaticProps = async () => {
 // }
 
 export default function Home({ questions }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (<div className={styles.container}>
-    {questions.map((question: Question) => <QuestionItem question={question} key={question.id} />)}
-  </div>
+  return (<>
+    <Head>
+      <title>Home</title>
+    </Head>
+    <div className={styles.container}>
+      {questions.map((question: Question) => <QuestionItem question={question} key={question.id} />)}
+    </div>
+  </>
   )
 }
 
