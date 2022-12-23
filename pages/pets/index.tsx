@@ -2,6 +2,7 @@ import PetItem from 'components/Pet';
 import { Pet } from 'model/Pet';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import styles from 'styles/PetPage.module.css';
 
 export interface IUserListPageProps {

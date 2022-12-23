@@ -12,7 +12,7 @@ export default function PetItem({ pet }: IPetProps) {
     return (
         <div>
             <Link href={`/pets/${pet.id}`}>
-                <Image src={pet.avatar} alt={pet.name} width={450} height={500} loading="lazy" className={styles.image}/>
+                <Image src={pet.avatar} alt={pet.name} width={450} height={500} loading="lazy" className={styles.image} />
             </Link>
         </div>
     );

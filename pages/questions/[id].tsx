@@ -1,6 +1,5 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import * as React from 'react';
 
 import AnswerItem from '../../components/Answer';
@@ -21,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   // request -> run SSR -> render -> change url + show page
   // await delay(5000);
   // console.log('delay 5s');
-  
+
   const id = params?.id;
 
   const _question = fetch(`${process.env.API_URI_PROXY}/question/info?id=${id}`).then(resp => resp).then(question => question.json());
