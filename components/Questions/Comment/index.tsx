@@ -1,5 +1,4 @@
-import moment from "moment";
-import { Comment } from "../../model/Comment";
+import { Comment } from "model/Comment";
 import styles from "./Comment.module.css";
 export interface ICommentItemProps {
     comment: Comment;

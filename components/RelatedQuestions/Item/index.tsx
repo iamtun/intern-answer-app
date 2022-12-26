@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { CommentOutlined } from '@ant-design/icons';
-import { Question } from '../../../model/Question';
+import { Question } from 'model/Question';
 import styles from './Item.module.css';
 import Link from 'next/link';
 

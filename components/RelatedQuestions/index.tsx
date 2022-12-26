@@ -1,9 +1,9 @@
 import { useEffect, useState, lazy, Suspense } from 'react';
 
-
 import styles from '../../styles/RelatedQuestion.module.css';
 import { Question } from '../../model/Question';
 import RQItem from './Item';
+import { getAllRelatedQuestions } from 'services/questionService';
 
 export interface IRelatedQuestionProps {
   question: Question;
@@ -15,10 +15,8 @@ export default function RelatedQuestion({ question }: IRelatedQuestionProps) {
 
   useEffect(() => {
     setTimeout(() => {
-      const _questions = fetch(`${process.env.API_URI_PROXY}/question/similar/tag?question_id=${question.id}`)
-        .then(resp => resp)
-        .then(questions => questions.json());
-
+      const _questions = getAllRelatedQuestions(question.id)
+;
       _questions.then(questions => {
         setQuestions(questions.data.list);
         setPending(1);

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Question } from '../../model/Question';
+import { Question } from 'model/Question';
 import { LikeOutlined, CommentOutlined, EyeOutlined } from '@ant-design/icons';
-import styles from '../../styles/Card.module.css'
+import styles from 'styles/Card.module.css'
 import { useRouter } from 'next/router';
 
 export interface QuestionProps {

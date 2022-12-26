@@ -2,11 +2,12 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import * as React from 'react';
 
-import AnswerItem from '../../components/Answer';
-import QuestionItem from '../../components/Question';
-import RelatedQuestion from '../../components/RelatedQuestions';
-import { Answer } from '../../model/Answer';
-import styles from '../../styles/QuestionDetail.module.css';
+import AnswerItem from 'components/Questions/Answer';
+import QuestionItem from 'components/Questions/Question';
+import RelatedQuestion from 'components/RelatedQuestions';
+import { Answer } from 'model/Answer';
+import styles from 'styles/QuestionDetail.module.css';
+import { findQuestionById, getAllComments } from 'services/questionService';
 
 export interface QuestionDetailProps {
 }
@@ -23,16 +24,22 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   const id = params?.id;
 
-  const _question = fetch(`${process.env.API_URI_PROXY}/question/info?id=${id}`).then(resp => resp).then(question => question.json());
-  const _answers = fetch(`${process.env.API_URI_PROXY}/answer/page?order=default&question_id=${id}&page=1&page_size=999`).then(resp => resp).then(answers => answers.json());
+  if (id) {
+    const _question = findQuestionById(id as string);
+    const _answers = getAllComments(id as string);
 
-  const [question, answers] = await Promise.all([_question, _answers]);
+    const [question, answers] = await Promise.all([_question, _answers]);
+
+    return {
+      props: {
+        question: question.data,
+        answers: answers.data.list
+      }
+    }
+  }
 
   return {
-    props: {
-      question: question.data,
-      answers: answers.data.list
-    }
+    notFound: true
   }
 }
 

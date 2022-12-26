@@ -1,14 +1,13 @@
-import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import QuestionItem from '../components/Question'
-import { Question } from '../model/Question'
-import styles from '../styles/Home.module.css'
+import { Question } from 'model/Question'
+import styles from 'styles/Home.module.css'
+import QuestionItem from 'components/Questions/Question'
+import { getAllQuestions } from 'services/questionService'
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const resp = await fetch(`${process.env.API_URI_PROXY}/question/page?page_size=20&page=1&order=newest`);
-    const questions = await resp.json();
+    const questions = await getAllQuestions();
     return {
       props: {
         questions: questions.data.list

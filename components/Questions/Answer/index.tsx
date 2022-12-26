@@ -1,8 +1,8 @@
-import dynamic from 'next/dynamic';
+
 import Image from 'next/image';
-import { lazy, Suspense, useState, useEffect } from 'react';
-import { Answer } from '../../model/Answer';
-import { Comment } from '../../model/Comment';
+import { useState, useEffect } from 'react';
+import { Answer } from 'model/Answer';
+import { Comment } from 'model/Comment';
 import CommentItem from '../Comment';
 import styles from './Answer.module.css';
 export interface IAnswerItemProps {
