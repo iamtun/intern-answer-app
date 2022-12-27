@@ -19,7 +19,9 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 
   return {
-    notFound: true
+    props: {
+      questions: []
+    }
   }
 
 }
@@ -42,7 +44,7 @@ export default function Home({ questions }: InferGetStaticPropsType<typeof getSt
       <meta name="google-site-verification" content="QQY9vCUpQTTD7gyvIUtHApR79RzF5N4PgCMeZRDKAII" />
     </Head>
     <div className={styles.container}>
-      {questions.map((question: Question) => <QuestionItem question={question} key={question.id} />)}
+      {questions.length > 0 ? questions.map((question: Question) => <QuestionItem question={question} key={question.id} />) : <h3>No contain</h3>}
     </div>
   </>
   )
