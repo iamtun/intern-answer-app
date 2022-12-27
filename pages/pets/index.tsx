@@ -29,6 +29,7 @@ export default function UserListPage({ pets }: InferGetServerSidePropsType<typeo
         <>
             <Head>
                 <title>Pets Page</title>
+                <meta name="google-site-verification" content="QQY9vCUpQTTD7gyvIUtHApR79RzF5N4PgCMeZRDKAII" />
                 <meta property="description" name="description" content="thú cưng siêu cute, vui nhộn, hài hước" data-app="true" />
                 <meta property='og:title' name='og:title' content='Pet Pages' />
                 <meta property='og:description' name='og:description' content='thú cưng siêu cute, vui nhộn, hài hước' />
