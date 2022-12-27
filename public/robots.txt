@@ -2,3 +2,5 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+Sitemap: https://your-answer.vercel.app/sitemap.xml
