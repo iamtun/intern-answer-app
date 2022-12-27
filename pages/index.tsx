@@ -39,6 +39,7 @@ export default function Home({ questions }: InferGetStaticPropsType<typeof getSt
   return (<>
     <Head>
       <title>Home</title>
+      <meta name="google-site-verification" content="QQY9vCUpQTTD7gyvIUtHApR79RzF5N4PgCMeZRDKAII" />
     </Head>
     <div className={styles.container}>
       {questions.map((question: Question) => <QuestionItem question={question} key={question.id} />)}
